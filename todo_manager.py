@@ -60,7 +60,7 @@ class TodoManager:
         """Add a new task"""
         try:
             datetime.strptime(due_date, '%Y-%m-%d')
-        except ValueError:
+        except (ValueError, TypeError):
             due_date = datetime.now().strftime('%Y-%m-%d')
 
         try:
